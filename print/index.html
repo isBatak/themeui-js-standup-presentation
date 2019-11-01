@@ -1,5 +1,303 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 2.17.7"/><title data-react-helmet="true">PROPS</title><link as="script" rel="preload" href="/component---gatsby-theme-mdx-deck-src-templates-deck-js-1ea97aa599e75f508359.js"/><link as="script" rel="preload" href="/commons-cb11f4ecc482359b7fd0.js"/><link as="script" rel="preload" href="/app-b0cde939bb884c20d302.js"/><link as="script" rel="preload" href="/webpack-runtime-c5de5ae2176c60c7f7d3.js"/><link as="fetch" rel="preload" href="/page-data/print/page-data.json" crossorigin="anonymous"/></head><body><script>(function() { try {
-        var mode = localStorage.getItem('theme-ui-color-mode');
-        if (!mode) return
-        document.body.classList.add('theme-ui-' + mode);
-      } catch (e) {} })();</script><noscript id="gatsby-noscript">This app works best with JavaScript enabled.</noscript><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><style data-emotion-css="13j5fvw">body{margin:0;}</style><style data-emotion-css="bdfrlc">.css-bdfrlc{width:100vw;height:100vh;}.css-bdfrlc *{box-sizing:border-box;}</style><div class="css-bdfrlc"><div style="outline:none;height:100%" tabindex="-1" role="group"><style data-emotion-css="ooyd37">.css-ooyd37{box-sizing:border-box;width:100%;height:100vh;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;overflow:hidden;position:relative;color:var(--theme-ui-colors-text,#000);background-color:var(--theme-ui-colors-background,#fff);font-family:system-ui,sans-serif;font-size:20px;}@media screen and (min-width:40em){.css-ooyd37{font-size:24px;}}@media screen and (min-width:52em){.css-ooyd37{font-size:32px;}}@media screen and (min-width:64em){.css-ooyd37{font-size:48px;}}</style><div class="css-ooyd37"><p class="css-0">Them UI</p></div><div class="css-ooyd37"><style data-emotion-css="1djqpdg">.css-1djqpdg{font-family:inherit;line-height:1.125;font-weight:700;}</style><h1 class="css-1djqpdg">PROPS</h1><style data-emotion-css="1uk1gs8">.css-1uk1gs8{margin:0;}</style><ul class="css-1uk1gs8"><li class="css-0">simplicity</li><li class="css-0">theming</li><li class="css-0">primitive elements</li><li class="css-0">fast prototyping</li></ul></div><div class="css-ooyd37"><h1 class="css-1djqpdg">CONS</h1><p class="css-0">...</p></div><div class="css-ooyd37"><h1 class="css-1djqpdg">Shorthands</h1><ul class="css-1uk1gs8"><li class="css-0">m, mx, my, p, px, py...</li><li class="css-0">margin, margin-left/margin-right, ...</li><li class="css-0">pure css also have shorthands like <style data-emotion-css="vgof0f">.css-vgof0f{font-family:"Roboto Mono",Menlo,monospace;}</style><code class="css-vgof0f">flex: &lt;grow&gt; &lt;shrink&gt; &lt;basis&gt;</code>, <code class="css-vgof0f">padding: &lt;top&gt; &lt;right&gt; &lt;bottom&gt; &lt;left&gt;</code></li><li class="css-0">something developer needs to learn, but once he is familiar with the syntax it really speed up development</li></ul></div><div class="css-ooyd37"><h1 class="css-1djqpdg">sx prop</h1><ul class="css-1uk1gs8"><li class="css-0">how to use it</li><li class="css-0">what to avoid</li><li class="css-0">when creating new styled component put it after <code class="css-vgof0f">{...rest}</code> (explain why!)</li><li class="css-0">avoid using it outside styled component for some small adjustments (use props or create a different styled component)</li></ul></div><div class="css-ooyd37"><h1 class="css-1djqpdg">tx prop</h1><ul class="css-1uk1gs8"><li class="css-0"><p class="css-0">when and why to use it</p></li><li class="css-0"><p class="css-0">export to normal CSS</p><ul class="css-1uk1gs8"><li class="css-0"><style data-emotion-css="1qljzjn">.css-1qljzjn{color:var(--theme-ui-colors-primary,#07c);}</style><a href="https://github.com/system-ui/theme-ui/tree/master/packages/tachyons" class="css-1qljzjn">https://github.com/system-ui/theme-ui/tree/master/packages/tachyons</a></li><li class="css-0">The best of both worlds</li></ul></li></ul></div><div class="css-ooyd37"><h1 class="css-1djqpdg">Dynamic props</h1><ul class="css-1uk1gs8"><li class="css-0">don&#x27;t use <code class="css-vgof0f">css</code> or <code class="css-vgof0f">sx</code> for props that are constantly changing (animations on user interaction), use native <code class="css-vgof0f">style</code> prop</li><li class="css-0">example:<ul class="css-1uk1gs8"><li class="css-0">transitioning <code class="css-vgof0f">x</code> value form <code class="css-vgof0f">0</code> to <code class="css-vgof0f">n</code> with JS (react-spring) and passing it to css method <code class="css-vgof0f">(x) =&gt; css`transform: translateX(${x}px)`;</code> will create <code class="css-vgof0f">n</code> css classes like <code class="css-vgof0f">css-XXXXXX</code></li><li class="css-0">this will hurt the performance</li><li class="css-0">better use <code class="css-vgof0f">&lt;div style={{ transform: `translateX(${x}px)` }} /&gt;</code></li><li class="css-0">this is not a problem with CSS-IN-JS, you&#x27;ll use <code class="css-vgof0f">style</code> prop in vanilla js and css, why you think CSS-IN-JS is different</li><li class="css-0">problem is that developers don&#x27;t think!</li></ul></li></ul></div><div class="css-ooyd37"><h1 class="css-1djqpdg">Typography.js</h1><ul class="css-1uk1gs8"><li class="css-0">using rems</li><li class="css-0">why are rems better?</li></ul></div><div class="css-ooyd37"><h1 class="css-1djqpdg">Figma theme package</h1><ul class="css-1uk1gs8"><li class="css-0">Generate development-ready theme JSON files from Figma Styles</li><li class="css-0"><a href="https://github.com/jxnblk/figma-theme" class="css-1qljzjn">https://github.com/jxnblk/figma-theme</a></li><li class="css-0"><a href="https://github.com/system-ui/theme-ui/pull/95" class="css-1qljzjn">https://github.com/system-ui/theme-ui/pull/95</a></li></ul></div><div class="css-ooyd37"><h1 class="css-1djqpdg">WHO IS USING IT</h1><ul class="css-1uk1gs8"><li class="css-0">Gatsby.js</li><li class="css-0">@jxnblk (Author) got hired by gatsby</li></ul></div></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/print";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-b0cde939bb884c20d302.js"],"component---gatsby-theme-mdx-deck-src-templates-deck-js":["/component---gatsby-theme-mdx-deck-src-templates-deck-js-1ea97aa599e75f508359.js"]};/*]]>*/</script><script src="/webpack-runtime-c5de5ae2176c60c7f7d3.js" async=""></script><script src="/app-b0cde939bb884c20d302.js" async=""></script><script src="/commons-cb11f4ecc482359b7fd0.js" async=""></script><script src="/component---gatsby-theme-mdx-deck-src-templates-deck-js-1ea97aa599e75f508359.js" async=""></script></body></html>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charSet="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="generator" content="Gatsby 2.17.7" />
+    <title data-react-helmet="true">PROPS</title>
+    <link
+      as="script"
+      rel="preload"
+      href="/themeui-js-standup-presentation/component---gatsby-theme-mdx-deck-src-templates-deck-js-1ea97aa599e75f508359.js"
+    />
+    <link as="script" rel="preload" href="/themeui-js-standup-presentation/commons-cb11f4ecc482359b7fd0.js" />
+    <link
+      as="script"
+      rel="preload"
+      href="/themeui-js-standup-presentation/themeui-js-standup-presentation/app-b0cde939bb884c20d302.js"
+    />
+    <link
+      as="script"
+      rel="preload"
+      href="/themeui-js-standup-presentation/webpack-runtime-c5de5ae2176c60c7f7d3.js"
+    />
+    <link
+      as="fetch"
+      rel="preload"
+      href="/themeui-js-standup-presentation/page-data/print/page-data.json"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <script>
+      (function() {
+        try {
+          var mode = localStorage.getItem("theme-ui-color-mode");
+          if (!mode) return;
+          document.body.classList.add("theme-ui-" + mode);
+        } catch (e) {}
+      })();</script
+    ><noscript id="gatsby-noscript"
+      >This app works best with JavaScript enabled.</noscript
+    >
+    <div id="___gatsby">
+      <div
+        style="outline:none"
+        tabindex="-1"
+        role="group"
+        id="gatsby-focus-wrapper"
+      >
+        <style data-emotion-css="13j5fvw">
+          body {
+            margin: 0;
+          }</style
+        ><style data-emotion-css="bdfrlc">
+          .css-bdfrlc {
+            width: 100vw;
+            height: 100vh;
+          }
+          .css-bdfrlc * {
+            box-sizing: border-box;
+          }
+        </style>
+        <div class="css-bdfrlc">
+          <div style="outline:none;height:100%" tabindex="-1" role="group">
+            <style data-emotion-css="ooyd37">
+              .css-ooyd37 {
+                box-sizing: border-box;
+                width: 100%;
+                height: 100vh;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                flex-direction: column;
+                -webkit-align-items: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-pack: center;
+                -webkit-justify-content: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                overflow: hidden;
+                position: relative;
+                color: var(--theme-ui-colors-text, #000);
+                background-color: var(--theme-ui-colors-background, #fff);
+                font-family: system-ui, sans-serif;
+                font-size: 20px;
+              }
+              @media screen and (min-width: 40em) {
+                .css-ooyd37 {
+                  font-size: 24px;
+                }
+              }
+              @media screen and (min-width: 52em) {
+                .css-ooyd37 {
+                  font-size: 32px;
+                }
+              }
+              @media screen and (min-width: 64em) {
+                .css-ooyd37 {
+                  font-size: 48px;
+                }
+              }
+            </style>
+            <div class="css-ooyd37"><p class="css-0">Them UI</p></div>
+            <div class="css-ooyd37">
+              <style data-emotion-css="1djqpdg">
+                .css-1djqpdg {
+                  font-family: inherit;
+                  line-height: 1.125;
+                  font-weight: 700;
+                }
+              </style>
+              <h1 class="css-1djqpdg">PROPS</h1>
+              <style data-emotion-css="1uk1gs8">
+                .css-1uk1gs8 {
+                  margin: 0;
+                }
+              </style>
+              <ul class="css-1uk1gs8">
+                <li class="css-0">simplicity</li>
+                <li class="css-0">theming</li>
+                <li class="css-0">primitive elements</li>
+                <li class="css-0">fast prototyping</li>
+              </ul>
+            </div>
+            <div class="css-ooyd37">
+              <h1 class="css-1djqpdg">CONS</h1>
+              <p class="css-0">...</p>
+            </div>
+            <div class="css-ooyd37">
+              <h1 class="css-1djqpdg">Shorthands</h1>
+              <ul class="css-1uk1gs8">
+                <li class="css-0">m, mx, my, p, px, py...</li>
+                <li class="css-0">margin, margin-left/margin-right, ...</li>
+                <li class="css-0">
+                  pure css also have shorthands like
+                  <style data-emotion-css="vgof0f">
+                    .css-vgof0f {
+                      font-family: "Roboto Mono", Menlo, monospace;
+                    }</style
+                  ><code class="css-vgof0f"
+                    >flex: &lt;grow&gt; &lt;shrink&gt; &lt;basis&gt;</code
+                  >,
+                  <code class="css-vgof0f"
+                    >padding: &lt;top&gt; &lt;right&gt; &lt;bottom&gt;
+                    &lt;left&gt;</code
+                  >
+                </li>
+                <li class="css-0">
+                  something developer needs to learn, but once he is familiar
+                  with the syntax it really speed up development
+                </li>
+              </ul>
+            </div>
+            <div class="css-ooyd37">
+              <h1 class="css-1djqpdg">sx prop</h1>
+              <ul class="css-1uk1gs8">
+                <li class="css-0">how to use it</li>
+                <li class="css-0">what to avoid</li>
+                <li class="css-0">
+                  when creating new styled component put it after
+                  <code class="css-vgof0f">{...rest}</code> (explain why!)
+                </li>
+                <li class="css-0">
+                  avoid using it outside styled component for some small
+                  adjustments (use props or create a different styled component)
+                </li>
+              </ul>
+            </div>
+            <div class="css-ooyd37">
+              <h1 class="css-1djqpdg">tx prop</h1>
+              <ul class="css-1uk1gs8">
+                <li class="css-0">
+                  <p class="css-0">when and why to use it</p>
+                </li>
+                <li class="css-0">
+                  <p class="css-0">export to normal CSS</p>
+                  <ul class="css-1uk1gs8">
+                    <li class="css-0">
+                      <style data-emotion-css="1qljzjn">
+                        .css-1qljzjn {
+                          color: var(--theme-ui-colors-primary, #07c);
+                        }</style
+                      ><a
+                        href="https://github.com/system-ui/theme-ui/tree/master/packages/tachyons"
+                        class="css-1qljzjn"
+                        >https://github.com/system-ui/theme-ui/tree/master/packages/tachyons</a
+                      >
+                    </li>
+                    <li class="css-0">The best of both worlds</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="css-ooyd37">
+              <h1 class="css-1djqpdg">Dynamic props</h1>
+              <ul class="css-1uk1gs8">
+                <li class="css-0">
+                  don&#x27;t use <code class="css-vgof0f">css</code> or
+                  <code class="css-vgof0f">sx</code> for props that are
+                  constantly changing (animations on user interaction), use
+                  native <code class="css-vgof0f">style</code> prop
+                </li>
+                <li class="css-0">
+                  example:
+                  <ul class="css-1uk1gs8">
+                    <li class="css-0">
+                      transitioning <code class="css-vgof0f">x</code> value form
+                      <code class="css-vgof0f">0</code> to
+                      <code class="css-vgof0f">n</code> with JS (react-spring)
+                      and passing it to css method
+                      <code class="css-vgof0f"
+                        >(x) =&gt; css`transform: translateX(${x}px)`;</code
+                      >
+                      will create <code class="css-vgof0f">n</code> css classes
+                      like <code class="css-vgof0f">css-XXXXXX</code>
+                    </li>
+                    <li class="css-0">this will hurt the performance</li>
+                    <li class="css-0">
+                      better use
+                      <code class="css-vgof0f"
+                        >&lt;div style={{ transform: `translateX(${x}px)` }}
+                        /&gt;</code
+                      >
+                    </li>
+                    <li class="css-0">
+                      this is not a problem with CSS-IN-JS, you&#x27;ll use
+                      <code class="css-vgof0f">style</code> prop in vanilla js
+                      and css, why you think CSS-IN-JS is different
+                    </li>
+                    <li class="css-0">
+                      problem is that developers don&#x27;t think!
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="css-ooyd37">
+              <h1 class="css-1djqpdg">Typography.js</h1>
+              <ul class="css-1uk1gs8">
+                <li class="css-0">using rems</li>
+                <li class="css-0">why are rems better?</li>
+              </ul>
+            </div>
+            <div class="css-ooyd37">
+              <h1 class="css-1djqpdg">Figma theme package</h1>
+              <ul class="css-1uk1gs8">
+                <li class="css-0">
+                  Generate development-ready theme JSON files from Figma Styles
+                </li>
+                <li class="css-0">
+                  <a
+                    href="https://github.com/jxnblk/figma-theme"
+                    class="css-1qljzjn"
+                    >https://github.com/jxnblk/figma-theme</a
+                  >
+                </li>
+                <li class="css-0">
+                  <a
+                    href="https://github.com/system-ui/theme-ui/pull/95"
+                    class="css-1qljzjn"
+                    >https://github.com/system-ui/theme-ui/pull/95</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="css-ooyd37">
+              <h1 class="css-1djqpdg">WHO IS USING IT</h1>
+              <ul class="css-1uk1gs8">
+                <li class="css-0">Gatsby.js</li>
+                <li class="css-0">@jxnblk (Author) got hired by gatsby</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script id="gatsby-script-loader">
+      /*<![CDATA[*/ window.pagePath = "/print"; /*]]>*/</script
+    ><script id="gatsby-chunk-mapping">
+      /*<![CDATA[*/ window.___chunkMapping = {
+        app: ["/themeui-js-standup-presentation/app-b0cde939bb884c20d302.js"],
+        "component---gatsby-theme-mdx-deck-src-templates-deck-js": [
+          "/themeui-js-standup-presentation/component---gatsby-theme-mdx-deck-src-templates-deck-js-1ea97aa599e75f508359.js"
+        ]
+      }; /*]]>*/</script
+    ><script src="/themeui-js-standup-presentation/webpack-runtime-c5de5ae2176c60c7f7d3.js" async=""></script
+    ><script src="/themeui-js-standup-presentation/app-b0cde939bb884c20d302.js" async=""></script
+    ><script src="/themeui-js-standup-presentation/commons-cb11f4ecc482359b7fd0.js" async=""></script
+    ><script
+      src="/themeui-js-standup-presentation/component---gatsby-theme-mdx-deck-src-templates-deck-js-1ea97aa599e75f508359.js"
+      async=""
+    ></script>
+  </body>
+</html>
