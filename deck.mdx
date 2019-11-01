@@ -1,0 +1,78 @@
+Them UI
+
+---
+
+# PROPS
+
+- simplicity
+- theming
+- primitive elements
+- fast prototyping
+
+---
+
+# CONS
+
+...
+
+---
+
+# Shorthands
+
+- m, mx, my, p, px, py...
+- margin, margin-left/margin-right, ...
+- pure css also have shorthands like `flex: <grow> <shrink> <basis>`, `padding: <top> <right> <bottom> <left>`
+- something developer needs to learn, but once he is familiar with the syntax it really speed up development
+
+---
+
+# sx prop
+
+- how to use it
+- what to avoid
+- when creating new styled component put it after `{...rest}` (explain why!)
+- avoid using it outside styled component for some small adjustments (use props or create a different styled component)
+
+---
+
+# tx prop
+
+- when and why to use it
+- export to normal CSS
+
+  - https://github.com/system-ui/theme-ui/tree/master/packages/tachyons
+  - The best of both worlds
+
+---
+
+# Dynamic props
+
+- don't use `css` or `sx` for props that are constantly changing (animations on user interaction), use native `style` prop
+- example:
+  - transitioning `x` value form `0` to `n` with JS (react-spring) and passing it to css method `` (x) => css`transform: translateX(${x}px)`; `` will create `n` css classes like `css-XXXXXX`
+  - this will hurt the performance
+  - better use `` <div style={{ transform: `translateX(${x}px)` }} /> ``
+  - this is not a problem with CSS-IN-JS, you'll use `style` prop in vanilla js and css, why you think CSS-IN-JS is different
+  - problem is that developers don't think!
+
+---
+
+# Typography.js
+
+- using rems
+- why are rems better?
+
+---
+
+# Figma theme package
+
+- Generate development-ready theme JSON files from Figma Styles
+- https://github.com/jxnblk/figma-theme
+- https://github.com/system-ui/theme-ui/pull/95
+
+---
+
+# WHO IS USING IT
+
+- Gatsby.js
+- @jxnblk (Author) got hired by gatsby
