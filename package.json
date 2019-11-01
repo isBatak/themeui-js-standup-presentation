@@ -11,7 +11,8 @@
   },
   "scripts": {
     "start": "mdx-deck deck.mdx",
-    "build": "mdx-deck build deck.mdx"
+    "build": "mdx-deck build deck.mdx",
+    "deploy": "node ./.bin/deploy.js"
   },
   "author": "",
   "license": "ISC"
