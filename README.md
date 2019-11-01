@@ -1,5 +1,7 @@
 # Introduction to ThemeUI
 
+[Preview](https://isbatak.github.io/themeui-js-standup-presentation/)
+
 ## TOC
 1. PROPS
 1. CONS
